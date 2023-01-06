@@ -4,15 +4,13 @@ if __name__ == "__main__":
 
     arg_count = len(sys.argv) - 1
     if arg_count == 0:
-        print("{} arguments.".format(arg_count))
+        print("0 arguments.")
     elif arg_count == 1:
-        print("{} arguments.".format(arg_count))
+        print("1 arguments:")
     else:
-        print("{} arguments.".format(arg_count))
+        print("{} arguments:".format(arg_count))
 
-    if arg_count >= 1:
-        print(":")
     for arg in sys.argv:
-        if arg_count != 0:
+        if arg_count > 0:
             print("{}: {}".format(arg_count, arg))
         arg_count += 1
