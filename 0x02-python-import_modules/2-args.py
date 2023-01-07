@@ -10,7 +10,9 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(arg_count))
 
+    if arg_count >= 1:
+        arg_count = 0
     for arg in sys.argv:
-        if arg_count > 0:
+        if arg_count != 0:
             print("{}: {}".format(arg_count, arg))
         arg_count += 1
