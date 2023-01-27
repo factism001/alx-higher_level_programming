@@ -1,0 +1,60 @@
+TESTS FOR 5-text_indentation.py
+================================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation(2.5)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("school   :")
+school   :
+<BLANKLINE>
+
+>>> text_indentation("        school   .")
+school   .
+<BLANKLINE>
+
+>>> text_indentation("school                ")
+school
+
+>>> text_indentation("       school")
+school
+
+>>> text_indentation("")
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+>>> text_indentation("\n.\n?\n:")
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation("    \n      ")
+<BLANKLINE>
+
+>>> text_indentation("   hi. how far? you ok" + ".")
+hi.
+<BLANKLINE>
+how far?
+<BLANKLINE>
+you ok.
+<BLANKLINE>
