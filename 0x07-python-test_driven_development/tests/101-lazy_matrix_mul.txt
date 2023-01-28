@@ -1,0 +1,106 @@
+TESTS FOR 101-lazy_matrix_mul.py
+================================
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+
+------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6, 7], [8, 9, 10]])
+array([[21, 24, 27],
+       [47, 54, 61]])
+
+------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 5, 7]], [[3], [5], [8]])
+array([[84]])
+
+------------------------------------------------------------
+>>> lazy_matrix_mul(2, [1, 2])
+Traceback (most recent call last):
+    ...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+------------------------------------------------------------
+>>> lazy_matrix_mul([1, 2], 790)
+Traceback (most recent call last):
+    ...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 4], "hola"], [[1, 2], [4, 5]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence
+
+-----------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2], [5, 7]], ["holbies", [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence
+
+----------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6], [1]], [[5, 5, 6], [4, 5, 6]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+___________________________________________________________
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [1, 2], [1, 2, 3]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+------------------------------------------------------------
+>>> lazy_matrix_mul([[1], [34], [5], ["hola"]], [[1, 3, 5, 6]])
+Traceback (most recent call last):
+    ...
+TypeError: invalid data type for einsum
+
+------------------------------------------------------------
+>>> lazy_matrix_mul([[1], [34], [5], [7]], [[1, 3, 5, 6], [3, 5, 6, "2"]])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (4,1) and (2,4) not aligned: 1 (dim 1) != 2 (dim 0)
+
+------------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2, 5], [3, 4]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+------------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 8], [1, 2]])
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
+
+-------------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (3,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+-------------------------------------------------------------------
+>>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
+
+-------------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+    ...
+ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+
+-------------------------------------------------------------------
+>>> lazy_matrix_mul([[1, 2],[2, 3]])
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+----------------------------------------------------------------------
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
