@@ -1,4 +1,4 @@
-usr/bin/python3
+#!/usr/bin/python3
 """
 function that create a Rectangle from the width and the height variables
 """
