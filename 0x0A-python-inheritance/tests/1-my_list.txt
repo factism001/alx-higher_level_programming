@@ -1,0 +1,94 @@
+TESTS FOR 1-my_list.py
+==========================================
+
+>>> MyList = __import__('1-my_list').MyList
+>>> lista1 = MyList()
+
+-----------------------------------------
+print a list with just one element
+>>> lista1.append(6)
+>>> print(lista1)
+[6]
+>>> lista1.print_sorted()
+[6]
+
+
+-----------------------------------------
+print a order list with several numbers
+>>> lista1 = MyList()
+>>> lista1.append(1)
+>>> lista1.append(2)
+>>> lista1.append(3)
+>>> lista1.append(5)
+>>> lista1.append(7)
+>>> lista1.append(8)
+>>> print(lista1)
+[1, 2, 3, 5, 7, 8]
+>>> lista1.print_sorted()
+[1, 2, 3, 5, 7, 8]
+
+------------------------------------------
+print a list with positive numbers
+>>> lista1 = MyList()
+>>> lista1.append(90)
+>>> lista1.append(87)
+>>> lista1.append(10)
+>>> lista1.append(0)
+>>> lista1.append(64)
+>>> lista1.append(7)
+>>> print(lista1)
+[90, 87, 10, 0, 64, 7]
+>>> lista1.print_sorted()
+[0, 7, 10, 64, 87, 90]
+
+------------------------------------------
+print a list with negative numbers
+>>> lista1 = MyList()
+>>> lista1.append(-6)
+>>> lista1.append(-14)
+>>> lista1.append(-10)
+>>> lista1.append(-1)
+>>> lista1.append(-90)
+>>> lista1.append(-7)
+>>> print(lista1)
+[-6, -14, -10, -1, -90, -7]
+>>> lista1.print_sorted()
+[-90, -14, -10, -7, -6, -1]
+
+
+-------------------------------------------
+print a empty list
+>>> lista1 = MyList()
+>>> print(lista1)
+[]
+>>> lista1.print_sorted()
+[]
+
+--------------------------------------------
+get if it is instance of the class
+>>> lista1 = MyList()
+>>> isinstance(lista1, MyList)
+True
+>>> lista1 = MyList()
+>>> isinstance(lista1, list)
+True
+
+--------------------------------------------
+get if Mylist is a subclass of list
+>>> issubclass(MyList, list)
+True
+
+---------------------------------------------
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
