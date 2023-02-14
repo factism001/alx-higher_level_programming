@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """Module that contains class named Base"""
 
+import csv
+import os
+import json
+
 
 class Base:
     """Class Base"""
@@ -8,7 +12,7 @@ class Base:
 
     def __init__(self, id=None):
         """initializes the instances"""
-        if id != none:
+        if id != None:
             self.id = id
         else:
             Base.__nb_objects += 1
