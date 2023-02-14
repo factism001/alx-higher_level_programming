@@ -6,7 +6,7 @@ class Base:
     """Class Base"""
     __nb_objects = 0
 
-    def __init__(self, id=none):
+    def __init__(self, id=None):
         """initializes the instances"""
         if id != none:
             self.id = id
