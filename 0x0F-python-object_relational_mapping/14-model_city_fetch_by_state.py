@@ -4,6 +4,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
+from model_city import City
 
 if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
@@ -12,6 +13,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    update_state = session.query(State).filter_by(id=2).first()
-    update_state.name = 'New Mexico'
-    session.commit()
+    for city, state in session.query(City, State) \
+                              .filter(City.state_id == State.id) \
+                              .order_by(City.id):
+        print('{}: ({}) {}'.format(state.name, city.id, city.name))

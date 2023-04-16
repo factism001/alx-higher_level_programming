@@ -7,4 +7,5 @@ if __name__ == "__main":
     cur = db.cursor()
     cur.execute("SELECT * from cities JOIN states \
                 ON cities.state_id = states.id ORDER BY cities.id")
-    [print(",".join([city[2] for city in cur.fetchall() if city[4] == sys.argv[4]]))]
+    print(",".join([city[2]
+          for city in cur.fetchall() if city[4] == sys.argv[4]]))
