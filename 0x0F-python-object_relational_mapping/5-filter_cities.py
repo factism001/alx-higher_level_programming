@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+lists all cities of that state, using the database hbtn_0e_4_usa
+"""
+
 import sys
 import MySQLdb
 
