@@ -7,6 +7,7 @@
 """
 
 import sys
+from unicodedata import name
 import MySQLdb
 
 if __name__ == "__main__":
