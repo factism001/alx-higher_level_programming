@@ -3,17 +3,16 @@
 Defines a state model that contain the class definition
  of a State and an instance Base = declarative_base()
 """
-
 from lib2to3.pytree import Base
 from sre_parse import State
 from unicodedata import name
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, ForeignKey
 
 Base = declarative_base()
 
 
-class City(Base):
+class State(Base):
     """
     inherits from Base Tips
     links to the MySQL table states
@@ -24,8 +23,6 @@ class City(Base):
      of a string with maximum 128 characters and
       can't be null
     """
-
-    __tablename__ = 'cities'
+    __tablename__ = "states"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
