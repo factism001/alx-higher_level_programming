@@ -1,8 +1,8 @@
-#!usr/bin/node
-exports.esrever = function(list) {
-    const newList = [];
-    for (let i = list.lenght - 1; i >= 0; i--) {
-        newList.push(list[i]);
-    }
-    return newList;
+#!/usr/bin/node
+exports.esrever = function (list) {
+  return list.reduceRight(function (array, current) {
+    array.push(current);
+    return array;
+  },
+  []);
 };
